@@ -20,8 +20,8 @@ public class APJumper : MonoBehaviour
 	public float m_impulsePower = 20f; 						// power of impulse when impulse mode is selected
 	public float m_impulseDirection = 90f;					// direction of impulse in degrees when impulse mode is selected
 
-	public float m_jumpMinHeight = 3f;						// jump min height height jump mode is used
-	public float m_jumpMaxHeight = 4f;						// jump max height height jump mode is used
+	public float m_jumpMinHeight = 1000f;						// jump min height height jump mode is used
+	public float m_jumpMaxHeight = 2000f;						// jump max height height jump mode is used
 
 	public string m_animation = "Impulse";					// animation to play when impulse is launched
 		
