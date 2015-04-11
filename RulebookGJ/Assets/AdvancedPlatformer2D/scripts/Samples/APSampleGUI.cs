@@ -105,8 +105,8 @@ public class APSampleGUI : APCharacterEventListener
 			}
 		}
 	}
-	
-	public void LoadLevel (string levelToLoad, float timeToLoad = 0f)
+
+	public void LoadLevel (string levelToLoad, float timeToLoad)
 	{
 		m_levelToLoad = levelToLoad;
 		m_timeToLoad = timeToLoad;

@@ -90,8 +90,9 @@ public class APInputButton
 		return m_bUp;
 	}
 
-	public void Refresh(bool bSet, bool bAutoFire = false)
+	public void Refresh(bool bSet, bool bAutoFire) //= false)
 	{
+		bAutoFire = false;
 		if(bSet)
 		{
 			if(InternalGetButtonDown())
@@ -118,7 +119,7 @@ public class APInputButton
 			}
 		}
 	}
-
+    
 	bool InternalGetButtonDown()
 	{
 		bool bRet = string.IsNullOrEmpty(m_name) ? false : Input.GetButtonDown(m_name) && Holders() && Releasers();
