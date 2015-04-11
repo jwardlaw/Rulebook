@@ -376,8 +376,6 @@ public partial class APCharacterController : MonoBehaviour
 	{
 		m_jump.m_button.Refresh(bSet, false);
 		m_glide.m_button.Refresh(bSet, false);
-		m_jump.m_maxHeight = 100f;
-		m_jump.m_minHeight = 100f;
 
 		if(m_meleeAttacks.m_enabled)
 		{
@@ -1460,6 +1458,7 @@ public partial class APCharacterController : MonoBehaviour
 
 					// Launch jump event
 					m_eventListeners.ForEach(e => e.OnJump());
+			
 
 					return;
 				}
