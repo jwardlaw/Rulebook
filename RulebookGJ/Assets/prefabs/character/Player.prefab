@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 244.420059, y: 4.11027813, z: 0}
+  m_LocalPosition: {x: -3.27999997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -113,8 +113,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .00472640991, y: 0}
+  serializedVersion: 2
   m_Size: {x: .679568052, y: 1.79999995}
-  m_Center: {x: .00472640991, y: 0}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -128,6 +130,8 @@ Animator:
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
@@ -212,7 +216,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
   m_downSlopeSliding:
-    m_enabled: 0
+    m_enabled: 1
     m_slidingPower: 1
     m_slopeMinAngle: 20
   m_groundAlign:
@@ -284,7 +288,7 @@ MonoBehaviour:
     m_airJumpCount: 0
     m_airJumpHorizontalPower: 8
   m_wallJump:
-    m_enabled: 0
+    m_enabled: 1
     m_button:
       m_name: 
       m_plugin: {fileID: 0}
@@ -296,7 +300,7 @@ MonoBehaviour:
     m_disableAutoRotateTime: .300000012
     m_rayIndexes: 
   m_wallSlide:
-    m_enabled: 0
+    m_enabled: 1
     m_friction: 8
     m_minSpeed: .100000001
     m_minTime: 0
@@ -323,13 +327,13 @@ MonoBehaviour:
     m_animClimbDown: ClimbBack
     m_animClimbLeft: ClimbRailingsRight
   m_meleeAttacks:
-    m_enabled: 0
+    m_enabled: 1
     m_attacks: []
   m_rangedAttacks:
-    m_enabled: 0
+    m_enabled: 1
     m_attacks: []
   m_glide:
-    m_enabled: 0
+    m_enabled: 1
     m_button:
       m_name: 
       m_plugin: {fileID: 0}
@@ -341,11 +345,11 @@ MonoBehaviour:
     m_maxCount: 1
     m_minAirTimeBeforeGlide: .100000001
   m_shift:
-    m_enabled: 0
+    m_enabled: 1
     m_maxCountInAir: 1
     m_shifts: []
   m_edgeGrab:
-    m_enabled: 0
+    m_enabled: 1
     m_layer:
       m_layerIndex: 11
     m_sensorRadius: .100000001
@@ -356,6 +360,7 @@ MonoBehaviour:
     m_minTimeBetweenTwoJumps: .300000012
     m_maxVelDamping: .5
     m_maxAirVelDamping: 1
+    m_carryRayIndex: 0
     m_groundAlignDeltaAngleMin: 1
     m_groundAlignDeltaAngleMax: 60
     m_groundAlignUpdatePosThreshold: .200000003
@@ -497,16 +502,20 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 2313139789
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1981827507
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aa9128fd5c0826e45990fbf18df8b5be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -521,4 +530,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

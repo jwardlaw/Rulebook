@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/AdvancedPlatformer2D/scenes/Melee Attack.unity
+    path: Assets/Scenes/AP_Scenes/Melee Attack.unity
   - enabled: 1
-    path: Assets/AdvancedPlatformer2D/scenes/Basics.unity
+    path: Assets/Scenes/AP_Scenes/Basics.unity
   - enabled: 0
-    path: Assets/AdvancedPlatformer2D/scenes/Ranged Attack.unity
+    path: Assets/Scenes/AP_Scenes/Ranged Attack.unity
