@@ -374,14 +374,16 @@ public partial class APCharacterController : MonoBehaviour
 
 	void RefreshInputs(bool bSet)
 	{
-		m_jump.m_button.Refresh(bSet);
-		m_glide.m_button.Refresh(bSet);
+		m_jump.m_button.Refresh(bSet, false);
+		m_glide.m_button.Refresh(bSet, false);
+		m_jump.m_maxHeight = 100f;
+		m_jump.m_minHeight = 100f;
 
 		if(m_meleeAttacks.m_enabled)
 		{
 			foreach (APMeleeAttack curAttack in m_meleeAttacks.m_attacks)
 			{
-				curAttack.m_button.Refresh(bSet);
+				curAttack.m_button.Refresh(bSet,false);
 			}
 		}
 		
@@ -398,7 +400,7 @@ public partial class APCharacterController : MonoBehaviour
 		{
 			foreach (Shift curShift in m_shift.m_shifts)
 			{
-				curShift.m_button.Refresh(bSet);
+				curShift.m_button.Refresh(bSet,false);
 			}
 		}
 	}

@@ -90,7 +90,7 @@ public class APInputButton
 		return m_bUp;
 	}
 
-	public void Refresh(bool bSet, bool bAutoFire = false)
+	public void Refresh(bool bSet, bool bAutoFire)
 	{
 		if(bSet)
 		{

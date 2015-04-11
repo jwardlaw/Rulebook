@@ -189,7 +189,7 @@ public class APSamplePlayer : MonoBehaviour
 		// launch fade to black
 		if(m_gui)
 		{
-			m_gui.LoadLevel(Application.loadedLevelName);
+			m_gui.LoadLevel(Application.loadedLevelName, 0f);
 		}
 
 		// remove player

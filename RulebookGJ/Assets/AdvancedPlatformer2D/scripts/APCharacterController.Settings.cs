@@ -123,8 +123,8 @@ public partial class APCharacterController : MonoBehaviour
 	{
 		public bool m_enabled = true;					// enabled status
 		public APInputButton m_button;					// disabled if empty
-		public float m_minHeight = 3f;					// min jump height
-		public float m_maxHeight = 3f;					// max jump height if pushing jump input
+		public float m_minHeight = 10f;					// min jump height
+		public float m_maxHeight = 10f;					// max jump height if pushing jump input
 		public int m_airJumpCount = 0;					// number of additional jump you can make while in air
 		public float m_airJumpHorizontalPower = 8f;		// horizontal impulse applied on air jumps
 	}
