@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11416848}
   - 212: {fileID: 21241896}
   - 114: {fileID: 11409910}
+  - 114: {fileID: 11469550}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -61,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.27999997, y: 0, z: 0}
+  m_LocalPosition: {x: -.109999999, y: -2.67000008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -526,6 +527,19 @@ MonoBehaviour:
   m_hitImpulse: {x: 8, y: 12}
   m_waitTimeAfterDie: 0
   m_animDie: 
+--- !u!114 &11469550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc7ed33820891143bbff5986f5d3b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: 2a7fbd57824e3d248a524313ca8eedec, type: 3}
+  fadespeed: .800000012
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

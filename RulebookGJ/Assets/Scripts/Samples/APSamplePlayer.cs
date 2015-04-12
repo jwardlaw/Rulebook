@@ -187,10 +187,7 @@ public class APSamplePlayer : MonoBehaviour
 		yield return new WaitForSeconds (m_waitTimeAfterDie);
 
 		// launch fade to black
-		if(m_gui)
-		{
-			m_gui.LoadLevel(Application.loadedLevelName, 0f);
-		}
+		Application.LoadLevel(Application.loadedLevel);
 
 		// remove player
 		gameObject.SetActive(false);
