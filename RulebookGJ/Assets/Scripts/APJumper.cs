@@ -23,7 +23,8 @@ public class APJumper : MonoBehaviour
 	public float m_jumpMinHeight = 1000f;						// jump min height height jump mode is used
 	public float m_jumpMaxHeight = 2000f;						// jump max height height jump mode is used
 
-	public string m_animation = "Impulse";					// animation to play when impulse is launched
+	public string m_animation = "Impulse";                  // animation to play when impulse is launched
+	public AudioSource audio;
 		
 
 	////////////////////////////////////////////////////////
@@ -35,6 +36,7 @@ public class APJumper : MonoBehaviour
 	void Awake()
 	{
 		m_anim = GetComponent<Animator>();
+		audio = GetComponent<AudioSource> ();
 	}
 
 	void ClearRuntimeValues()
@@ -92,6 +94,7 @@ public class APJumper : MonoBehaviour
 			{
 				character.Jump(m_jumpMinHeight, m_jumpMaxHeight);
 			}
+			audio.Play();
 		}
 	}
 }
