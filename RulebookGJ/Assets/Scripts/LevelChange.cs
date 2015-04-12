@@ -22,16 +22,21 @@ public class LevelChange : MonoBehaviour
 
 		yield return new WaitForSeconds (0.5f);
 
-		float fade = GameObject.Find ("Player").GetComponent<SceneFading> ().BeginFade (1);
+		float fade = GameObject.Find ("_GM").GetComponent<SceneFading> ().BeginFade (1);
 		yield return new WaitForSeconds (fade);
 		Application.LoadLevel (Application.loadedLevel + 1);
+	}
+
+	public void NextLevel()
+	{
+		StartCoroutine (AdvanceLevel ());
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
 		if (coll.name == "Player") 
 		{
-			StartCoroutine(AdvanceLevel ());
+			NextLevel ();
 		}
 	}
 }
