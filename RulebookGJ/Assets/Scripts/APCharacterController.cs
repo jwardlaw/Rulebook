@@ -415,7 +415,7 @@ public partial class APCharacterController : MonoBehaviour
 		case APFsmStateEvent.eUpdate:
 		{
 			ApplyGravity();
-			HandleCrouch();
+			//HandleCrouch();
 			HandleHorizontalMove();
 			HandleGlide();
 			HandleWallSlide();
@@ -559,7 +559,7 @@ public partial class APCharacterController : MonoBehaviour
 		    case APFsmStateEvent.eUpdate:
 		    {
 			    ApplyGravity();
-			    HandleCrouch();
+			    //HandleCrouch();
 			    HandleHorizontalMove();
 			    HandleJump();
 			    HandleMeleeAttack();
@@ -721,7 +721,7 @@ public partial class APCharacterController : MonoBehaviour
 		{
 			// update state
 			ApplyGravity();
-			HandleCrouch();
+			//HandleCrouch();
 			HandleHorizontalMove();
 			HandleGlide();
 			HandleWallJump();
@@ -822,7 +822,7 @@ public partial class APCharacterController : MonoBehaviour
 		{
 			// update state
 			ApplyGravity();
-			HandleCrouch();
+			//HandleCrouch();
 			HandleHorizontalMove();
 			HandleGlide();
 			HandleWallJump();
@@ -1768,7 +1768,7 @@ public partial class APCharacterController : MonoBehaviour
 	{
 		return m_inputs.m_axisY.GetValue() < -0.5f;
 	}
-
+	/*
 	void HandleCrouch()
 	{
 		// Do not change state if currently switching or no crouch animation
@@ -1798,7 +1798,7 @@ public partial class APCharacterController : MonoBehaviour
 			}
 		}
 	}
-
+*/
 	bool CanUncrouch()
 	{
 		// make sure expanded box does not collide
