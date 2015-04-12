@@ -383,7 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RaysGround:
   - m_position: {x: -.301079214, y: -.540000021}
-    m_penetration: .629999995
+    m_penetration: .600000024
     m_extraDistance: .100000001
     m_hitInfo:
       m_collider: {fileID: 0}
@@ -391,7 +391,7 @@ MonoBehaviour:
       m_normal: {x: 0, y: 0}
       m_penetration: 0
   - m_position: {x: .00472640991, y: -.540000021}
-    m_penetration: .629999995
+    m_penetration: .600000024
     m_extraDistance: .100000001
     m_hitInfo:
       m_collider: {fileID: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
       m_normal: {x: 0, y: 0}
       m_penetration: 0
   - m_position: {x: .310532033, y: -.540000021}
-    m_penetration: .629999995
+    m_penetration: .600000024
     m_extraDistance: .100000001
     m_hitInfo:
       m_collider: {fileID: 0}
