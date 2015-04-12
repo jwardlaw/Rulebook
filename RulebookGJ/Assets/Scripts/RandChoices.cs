@@ -13,21 +13,34 @@ using System.Collections;
 
 public class RandChoices : MonoBehaviour {
 	int maxSize = 0;
+	float timer = 0;
+	Random rand = new Random();
 	int choiceIndex = 0;
+	bool useWheel = true;
+	bool timerFinished = false;
 	string currentChoice = "";
 	string[] hiddenChoices = {"This is It", "N", "A", "b", "c"};
 	string[] choices = {"???????", "???????","???????","???????","???????"};
-
-
-	public RandChoices ()
+	private int groupWidth = 200;
+	private int groupHeight = 170;
+	void Update(){
+		if (useWheel) {
+			if (!Camera.main.GetComponent<AudioSource> ().isPlaying) {
+				useWheel = false;
+			} 
+		} else {
+			if(!timerFinished)
+				timer += Time.deltaTime;
+		}
+	}
+	void Start ()
 	{
-		choiceIndex = 0;
 		maxSize = hiddenChoices.Length;
+		choiceIndex = Random.Range (0, maxSize);
 	}
 	public string GetRandomChoice ()
 	{
 		Random rand = new Random();
-		//choiceIndex = rand.Range(0f, (float)maxSize);
 		changeChoices ();
 		return hiddenChoices [choiceIndex];
 	}
@@ -35,6 +48,33 @@ public class RandChoices : MonoBehaviour {
 	{
 		currentChoice= hiddenChoices [choiceIndex];
 		choices [choiceIndex] = currentChoice;
+	}
+	bool TogglePause()
+	{
+		if (Time.timeScale == 0) {
+			Time.timeScale = 1;
+			return(false);
+		} else {
+			Time.timeScale = 0;
+			return(true);
+		}
+	}
+	void OnGUI () {
+		if (timer < 5) {
+			GUI.color = Color.white;
+			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
+			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
+				GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
+			}
+			GUI.EndGroup ();
+		} 
+		else if (timer >= 5){
+			GetRandomChoice();
+			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
+				GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
+			}
+			timerFinished = true;
+		}
 	}
 }
 
