@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: d19a14a97fc79e4498810324e6871506
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: shift_down_loop_0
+    21300002: shift_down_loop_1
+    21300004: shift_down_loop_2
+    21300006: shift_down_loop_3
+    21300008: shift_down_loop_4
+    21300010: shift_down_loop_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
