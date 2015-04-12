@@ -2,22 +2,16 @@ using UnityEngine;
 using System.Collections;
 
 public class Pause : MonoBehaviour {
-	float timer = 0;
 	bool pause = false;
 	bool narration;
-	float timeForAudio;
 	private int groupWidth = 200;
 	private int groupHeight = 170;
 	
 	void Start()
 	{
-		timeForAudio = Camera.main.GetComponent<AudioSource>().clip.length;
 		Time.timeScale = 1;
 		narration = false;
 		TogglePause ();
-		//narration = false;
-		//TogglePause ();
-		//narration = true;
 
 		Debug.Log ("Check");
 	}
@@ -39,21 +33,22 @@ public class Pause : MonoBehaviour {
 				}
 				GUI.EndGroup ();
 			}
-		} 
-	//else {
-		//	Debug.Log ("Checker2");
-		//	InvokeRepeating("OHHH", 10 , 0);
-		//	pause = TogglePause();
-		//}
+		} else {
+			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
+			if (GUI.Button (new Rect (0, 120, 200, 50), "Skip Narration")) {
+				Application.LoadLevel (0);
+			}
+			GUI.EndGroup ();
+		}
+		
 	}
-
+	
 	void Update()
 	{
 		if(Input.GetKeyUp(KeyCode.Escape))
 		   pause = TogglePause();
-		timer = Time.realtimeSinceStartup;
 		if (!narration) {
-			if (timer >= timeForAudio+1) {
+			if (!Camera.main.GetComponent<AudioSource>().isPlaying) {
 				narration = true;
 				TogglePause ();
 			}
