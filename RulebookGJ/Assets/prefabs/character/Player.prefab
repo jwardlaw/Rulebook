@@ -14,7 +14,8 @@ GameObject:
   - 114: {fileID: 11400000}
   - 95: {fileID: 9500000}
   - 114: {fileID: 11416848}
-  - 212: {fileID: 21202226}
+  - 212: {fileID: 21241896}
+  - 114: {fileID: 11409910}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -495,6 +496,17 @@ MonoBehaviour:
     m_extraDistanceDown: .100000001
     m_rayXBoxScale: {x: .899999976, y: .600000024}
     m_rayYBoxScale: {x: 0, y: .800000012}
+--- !u!114 &11409910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192d5d12913213e4087ab56b157b2b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11416848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -538,9 +550,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1981827507
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aa9128fd5c0826e45990fbf18df8b5be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc782d5989784cd468f9ff2110f40029, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!212 &21202226
+--- !u!212 &21241896
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

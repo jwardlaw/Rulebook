@@ -33,13 +33,16 @@ public class Pause : MonoBehaviour {
 				}
 				GUI.EndGroup ();
 			}
-		} else {
+		} 
+
+		else {
 			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
 			if (GUI.Button (new Rect (0, 120, 200, 50), "Skip Narration")) {
-				Application.LoadLevel (0);
+				Camera.main.GetComponent<AudioSource>().Stop();
 			}
 			GUI.EndGroup ();
 		}
+
 		
 	}
 	
