@@ -823,6 +823,10 @@ Prefab:
       propertyPath: m_Name
       value: Ground 8
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
   m_IsPrefabParent: 0
@@ -955,6 +959,10 @@ Prefab:
       propertyPath: m_Name
       value: Ground 10
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
   m_IsPrefabParent: 0
@@ -1016,6 +1024,10 @@ Prefab:
     - target: {fileID: 100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
       propertyPath: m_Name
       value: Ground 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
@@ -1229,25 +1241,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
       propertyPath: m_Name
       value: Ground 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.39999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
@@ -1493,6 +1489,10 @@ Prefab:
       propertyPath: m_Name
       value: Ground 9
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
   m_IsPrefabParent: 0
@@ -1550,6 +1550,10 @@ Prefab:
     - target: {fileID: 100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
       propertyPath: m_Name
       value: Ground 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
@@ -1678,6 +1682,10 @@ Prefab:
     - target: {fileID: 21200000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5041bc31bc285748a3eca66e4da989e, type: 2}
