@@ -5,6 +5,7 @@ public class LevelChange : MonoBehaviour
 {
 
 	public AudioSource audio;
+	public bool gameOver;
 
 	private bool playexitsoundonce = true;
 
@@ -36,6 +37,7 @@ public class LevelChange : MonoBehaviour
 	{
 		if (coll.name == "Player") 
 		{
+			gameOver = true;
 			NextLevel ();
 		}
 	}
