@@ -11,7 +11,8 @@ public class GM_Script : MonoBehaviour {
 	{ 
 		if (instance != null && instance != this) 
 		{ 
-			Destroy(this.gameObject); return; 
+			Destroy(instance.gameObject); 
+			return; 
 		} 
 		else 
 		{ 
