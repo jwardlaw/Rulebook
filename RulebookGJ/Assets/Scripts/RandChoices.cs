@@ -19,8 +19,8 @@ public class RandChoices : MonoBehaviour {
 	bool useWheel = true;
 	bool timerFinished = false;
 	string currentChoice = "";
-	string[] hiddenChoices = {"This is It", "N", "A", "b", "c"};
-	string[] choices = {"???????", "???????","???????","???????","???????"};
+	string[] hiddenChoices;
+	string[] choices;
 	private int groupWidth = 200;
 	private int groupHeight = 170;
 	void Update(){
@@ -35,12 +35,18 @@ public class RandChoices : MonoBehaviour {
 	}
 	void Start ()
 	{
+		choices = new string[5]{"???????", "???????","???????","???????","???????"};
+		hiddenChoices = new string[5]{"This is It", "N", "A", "b", "c"};
 		maxSize = hiddenChoices.Length;
 		choiceIndex = Random.Range (0, maxSize);
 	}
+	void Awake(){
+		choiceIndex = Random.Range(0, maxSize);
+		useWheel = true;
+		timer = 0;
+	}
 	public string GetRandomChoice ()
 	{
-		Random rand = new Random();
 		changeChoices ();
 		return hiddenChoices [choiceIndex];
 	}
@@ -64,14 +70,21 @@ public class RandChoices : MonoBehaviour {
 			GUI.color = Color.white;
 			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
 			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
+				GUI.color = Color.white;
 				GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
 			}
 			GUI.EndGroup ();
 		} 
 		else if (timer >= 5){
-			GetRandomChoice();
+			string eventChosen = GetRandomChoice();
 			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
-				GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
+				if(eventChosen.CompareTo(choices[i]) != 0){
+					GUI.color = Color.white;
+					GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
+				}else{
+				    GUI.color = Color.yellow;
+					GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
+				}
 			}
 			timerFinished = true;
 		}
