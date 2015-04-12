@@ -28,6 +28,7 @@ public class APSamplePlayer : MonoBehaviour
 	float m_godModeTime;
 	APSampleGUI m_gui;
 	bool m_refreshGui;
+	GameObject lvlChange;
 
 	// Gets access to our GUI
 	public APSampleGUI GetGUI() { return m_gui; }
@@ -48,6 +49,8 @@ public class APSamplePlayer : MonoBehaviour
 		m_godMode = false;
 		m_godModeTime = 0f;
 		m_refreshGui = true;
+
+		lvlChange = GameObject.Find ("Exit");
 
 		// save ref to our sample GUI here
 		m_gui = GameObject.FindObjectOfType<APSampleGUI>();
@@ -137,7 +140,7 @@ public class APSamplePlayer : MonoBehaviour
 			return;
 
 		// handle death & callbacks
-		if (fDamage >= m_life)
+		if (fDamage >= m_life && !lvlChange.GetComponent<LevelChange>().gameOver)
 		{
 			Kill();
 		}
