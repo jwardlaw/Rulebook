@@ -769,6 +769,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 39
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
+      propertyPath: m_impulsePower
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
   m_IsPrefabParent: 0
@@ -1515,6 +1519,10 @@ Prefab:
       propertyPath: m_Name
       value: Jumper 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
+      propertyPath: m_impulsePower
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
   m_IsPrefabParent: 0
@@ -1960,6 +1968,10 @@ Prefab:
     - target: {fileID: 100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
       propertyPath: m_Name
       value: Jumper 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
+      propertyPath: m_impulsePower
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
@@ -2539,6 +2551,10 @@ Prefab:
       propertyPath: m_Name
       value: Jumper 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
+      propertyPath: m_impulsePower
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
   m_IsPrefabParent: 0
@@ -2730,6 +2746,10 @@ Prefab:
     - target: {fileID: 100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
       propertyPath: m_Name
       value: Jumper 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
+      propertyPath: m_impulsePower
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
@@ -3268,6 +3288,10 @@ Prefab:
     - target: {fileID: 100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
       propertyPath: m_Name
       value: Jumper 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
+      propertyPath: m_impulsePower
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb6d8cc39ebbd094e8db6ce5e13bd3f4, type: 2}
