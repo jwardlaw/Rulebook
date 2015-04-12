@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 155961676c74e914282472a6e9807c84
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: shuri_explode_0
+    21300002: shuri_explode_1
+    21300004: shuri_explode_2
+    21300006: shuri_explode_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

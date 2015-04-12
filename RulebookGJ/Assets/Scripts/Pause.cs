@@ -2,20 +2,19 @@ using UnityEngine;
 using System.Collections;
 
 public class Pause : MonoBehaviour {
+	float timer = 0;
 	bool pause = false;
 	bool narration;
+	float timeForAudio;
 	private int groupWidth = 200;
 	private int groupHeight = 170;
-
+	
 	void Start()
 	{
-		float timeForAudio = Camera.main.GetComponent<AudioSource>().clip.length;
+		timeForAudio = Camera.main.GetComponent<AudioSource>().clip.length;
 		Time.timeScale = 1;
+		narration = false;
 		TogglePause ();
-		while (Time.realtimeSinceStartup < timeForAudio)
-			Debug.Log ("YEAH");
-		TogglePause ();
-
 		//narration = false;
 		//TogglePause ();
 		//narration = true;
@@ -52,7 +51,14 @@ public class Pause : MonoBehaviour {
 	{
 		if(Input.GetKeyUp(KeyCode.Escape))
 		   pause = TogglePause();
-		//narration = false;
+		timer = Time.realtimeSinceStartup;
+		if (!narration) {
+			if (timer >= timeForAudio+1) {
+				narration = true;
+				TogglePause ();
+			}
+		}
+			//narration = false;
 	}
 
 	bool TogglePause()
