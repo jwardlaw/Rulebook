@@ -192,7 +192,7 @@ MonoBehaviour:
     m_maxFallSpeed: 20
     m_crouchSizePercent: .699999988
     m_uncrouchMinSpeed: 0
-    m_enableCrouchedRotate: 1
+    m_enableCrouchedRotate: 0
     m_autoMove: 0
     m_haltAutoMove: 
     m_edgeSlideFactor: 0
