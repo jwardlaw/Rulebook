@@ -7,33 +7,34 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-namespace AssemblyCSharp
-{
-	public class RandChoices
+using UnityEngine;
+//using UnityEngine.Random;
+using System.Collections;
+
+public class RandChoices : MonoBehaviour {
+	int maxSize = 0;
+	int choiceIndex = 0;
+	string currentChoice = "";
+	string[] hiddenChoices = {"This is It", "N", "A", "b", "c"};
+	string[] choices = {"???????", "???????","???????","???????","???????"};
+
+
+	public RandChoices ()
 	{
-		int maxSize = 0;
-		int choiceIndex = 0;
-		string currentChoice = "";
-		string[] hiddenChoices = {"This is It", "N", "A", "b", "c"};
-		string[] choices = {"???????", "???????","???????","???????","???????"};
-		public RandChoices ()
-		{
-			choiceIndex = 0;
-			maxSize = hiddenChoices.Length;
-		}
-		public string GetRandomChoice ()
-		{
-			Random rand = new Random();
-			choiceIndex = rand.Next (0, maxSize);
-			changeChoices ();
-			return hiddenChoices [choiceIndex];
-		}
-		public void changeChoices ()
-		{
-			currentChoice= hiddenChoices [choiceIndex];
-			choices [choiceIndex] = currentChoice;
-		}
+		choiceIndex = 0;
+		maxSize = hiddenChoices.Length;
+	}
+	public string GetRandomChoice ()
+	{
+		Random rand = new Random();
+		//choiceIndex = rand.Range(0f, (float)maxSize);
+		changeChoices ();
+		return hiddenChoices [choiceIndex];
+	}
+	public void changeChoices ()
+	{
+		currentChoice= hiddenChoices [choiceIndex];
+		choices [choiceIndex] = currentChoice;
 	}
 }
 
