@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GM_Script : MonoBehaviour {
-
+public class GM_Script : MonoBehaviour 
+{
+	public float timer;
 	private static GM_Script instance = null;
 	public static GM_Script Instance {
 		get { return instance; }
@@ -19,6 +20,16 @@ public class GM_Script : MonoBehaviour {
 			instance = this; 
 		} 
 		DontDestroyOnLoad(this.gameObject); 
+	}
+
+	void Update()
+	{
+		timer += Time.deltaTime;
+	}
+
+	void OnGUI()
+	{
+		GUI.Label(new Rect(0, 0, 0, 0), timer.ToString());
 	}
 
 	public void QuitGame()
