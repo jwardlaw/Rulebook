@@ -418,6 +418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db870aa61b6c314f9c517251980d561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  PlayerPos: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!4 &347233858
 Transform:
   m_ObjectHideFlags: 0
@@ -1559,8 +1562,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 347233856}
-        m_MethodName: NextLevel
+      - m_Target: {fileID: 347233857}
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
