@@ -121,11 +121,12 @@ public partial class APCharacterController : MonoBehaviour
 	[System.Serializable]
 	public class SettingsJump
 	{
+		public bool m_forever = false;
 		public bool m_enabled = true;					// enabled status
 		public APInputButton m_button;					// disabled if empty
 		public float m_minHeight = 10f;					// min jump height
 		public float m_maxHeight = 10f;					// max jump height if pushing jump input
-		public int m_airJumpCount = 0;					// number of additional jump you can make while in air
+		public int m_airJumpCount = 2;					// number of additional jump you can make while in air
 		public float m_airJumpHorizontalPower = 8f;		// horizontal impulse applied on air jumps
 	}
 

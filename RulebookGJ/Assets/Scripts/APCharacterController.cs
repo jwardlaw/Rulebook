@@ -376,7 +376,6 @@ public partial class APCharacterController : MonoBehaviour
 	{
 		m_jump.m_button.Refresh(bSet, false);
 		m_glide.m_button.Refresh(bSet, false);
-
 		if(m_meleeAttacks.m_enabled)
 		{
 			foreach (APMeleeAttack curAttack in m_meleeAttacks.m_attacks)
@@ -1432,7 +1431,7 @@ public partial class APCharacterController : MonoBehaviour
 	void HandleJump()
 	{
 		// check if we should jump
-		if (m_jump.m_enabled && m_jump.m_button.GetButtonDown() && (Time.time - m_lastJumpTime > m_advanced.m_minTimeBetweenTwoJumps))
+		if (m_jump.m_enabled && (m_jump.m_button.GetButtonDown()||m_jump.m_forever) && (Time.time - m_lastJumpTime > m_advanced.m_minTimeBetweenTwoJumps))
 		{ 
 			if(m_onGround || (m_jump.m_airJumpCount > m_airJumpCount))
 			{
