@@ -22,8 +22,6 @@ public class RandChoices : MonoBehaviour {
 	string currentChoice = "";
 	string[] hiddenChoices;
 	string[] choices;
-	private int groupWidth = 200;
-	private int groupHeight = 170;
 	GameObject go;
 	void Update(){
 		if (useWheel) {
@@ -42,12 +40,13 @@ public class RandChoices : MonoBehaviour {
 	{
 		go = GameObject.Find("Player");
 		go.GetComponent<APCharacterController>().m_jump.m_forever = false; 
-		choices = new string[6]{"???????", "???????","???????","???????","???????","???????"};
-		hiddenChoices = new string[6]{"Don't Go Too Fast!", "Don't Double Jump!", "Don't Be Afraid To Jump!", "Don't Jump So Far!", "Don't Stop Jumping!", "Don't Look at Things so normally!"};
+		choices = new string[7]{"???????", "???????","???????","???????","???????","???????","???????"};
+		hiddenChoices = new string[7]{"Don't Go Too Fast!", "Don't Double Jump!", "Don't Be Afraid To Jump!", "Don't Jump So Far!", "Don't Stop Jumping!", "Don't Look At Things So Normally!", "Don't Act So Grounded!"};
 		maxSize = hiddenChoices.Length;
 		choiceIndex = Random.Range (0, maxSize);
 	}
 	void Awake(){
+
 
 		choiceIndex = Random.Range(0, maxSize);
 		useWheel = true;
@@ -75,28 +74,17 @@ public class RandChoices : MonoBehaviour {
 		}
 	}
 	void OnGUI () {
-		if (timer < 2) {
-			GUI.color = Color.white;
-			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
-			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
-				GUI.color = Color.white;
-				GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
-			}
-			GUI.EndGroup ();
-		} 
-		else if (timer >= 2){
 			string eventChosen = GetRandomChoice();
 			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
 				if(eventChosen.CompareTo(choices[i]) != 0){
 					GUI.color = Color.white;
-					GUI.TextArea (new Rect (0, 0 + j, 180, 20), choices[i]);
+					GUI.TextArea (new Rect (0, 0 + j, 240, 20), choices[i]);
 				}else{
 				    GUI.color = Color.yellow;
-					GUI.TextArea (new Rect (0, 0 + j, 180, 20), choices[i]);
+					GUI.TextArea (new Rect (0, 0 + j, 240, 20), choices[i]);
 				}
 			}
 			timerFinished = true;
-		}
 	}
 	void ActionChange(int ChoiceIndex){
 		switch(ChoiceIndex){
@@ -120,6 +108,9 @@ public class RandChoices : MonoBehaviour {
 				break;
 			case 5:
 				Camera.main.transform.eulerAngles =  new Vector3(0,0,180);
+				break;
+			case 6:
+				go.GetComponent<APCharacterController>().m_basic.m_gravity = 10f;
 				break;
 		}
 	}
