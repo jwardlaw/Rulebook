@@ -4,12 +4,13 @@ using System.Collections;
 public class Pause : MonoBehaviour {
 	bool pause = false;
 	bool narration;
+	bool specialPause = false;
 	private int groupWidth = 200;
 	private int groupHeight = 170;
 	
 	void Start()
 	{
-		Time.timeScale = 1;
+		Time.timeScale = 1f;
 		narration = false;
 		TogglePause ();
 
@@ -21,7 +22,7 @@ public class Pause : MonoBehaviour {
 	void OnGUI ()
 	{
 		if (narration == true) {
-			if (pause == true) {
+			if (pause == true && Time.timeScale != 0.5) {
 
 				GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
 				GUI.TextArea (new Rect (0, 0, 100, 20), "Rule");
@@ -64,13 +65,26 @@ public class Pause : MonoBehaviour {
 
 	bool TogglePause()
 	{
-		if (Time.timeScale == 0) {
-			Time.timeScale = 1;
+		if (Time.timeScale == 0f) {
+			if(specialPause){
+				Time.timeScale = 0.5f;
+				specialPause = false;
+			}else
+				Time.timeScale = 1f;
 			return(false);
+		} else if (Time.timeScale == 0.5f) {
+			if (!specialPause){
+				Debug.Log ("CHECK THIS");
+				Time.timeScale = 0f;
+				specialPause = true;
+				Debug.Log ("CHECK THIS2");
+			}
+			return(true);
 		} else {
-			Time.timeScale = 0;
+			Time.timeScale = 0f;
 			return(true);
 		}
+
 	}
 }
 
