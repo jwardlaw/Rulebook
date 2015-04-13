@@ -22,6 +22,7 @@ public class CameraShakeScript : MonoBehaviour {
 	
 	void Update()
 	{
+		originalPos = GameObject.Find ("Player").transform.position;
 		//if shakestart then set original and start shaking
 	
 		//if shake has started and still shake left
