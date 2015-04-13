@@ -47,6 +47,7 @@ public class RandChoices : MonoBehaviour {
 	}
 	void Awake(){
 
+
 		choiceIndex = Random.Range(0, maxSize);
 		useWheel = true;
 		timer = 0;
