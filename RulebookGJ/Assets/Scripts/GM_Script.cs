@@ -4,15 +4,16 @@ using System.Collections;
 public class GM_Script : MonoBehaviour 
 {
 	public float timer;
+	public Transform PlayerPos;
 	private static GM_Script instance = null;
 	public static GM_Script Instance {
 		get { return instance; }
 	}
 	void Awake()
-	{ 
+	{
 		if (instance != null && instance != this) 
 		{ 
-			Destroy(instance.gameObject); 
+			Destroy(gameObject); 
 			return; 
 		} 
 		else 
@@ -24,12 +25,13 @@ public class GM_Script : MonoBehaviour
 
 	void Update()
 	{
+		PlayerPos = GameObject.Find ("Player").transform;
 		timer += Time.deltaTime;
 	}
 
 	void OnGUI()
 	{
-		GUI.Label(new Rect(0, 0, 0, 0), timer.ToString());
+		GUI.Label(new Rect(Screen.width -100 , 0,100, 50), timer.ToString());
 	}
 
 	public void QuitGame()

@@ -12,6 +12,7 @@ public class APSampleSpikes : MonoBehaviour
 	////////////////////////////////////////////////////////
 	// PUBLIC/HIGH LEVEL
 	public float m_touchDamage = 1f;						// damage done when touching player
+	public AudioSource audio;
 
 	////////////////////////////////////////////////////////
 	// PRIVATE/LOW LEVEL
@@ -20,6 +21,7 @@ public class APSampleSpikes : MonoBehaviour
 
 	void Start () 
 	{
+		audio = GetComponent<AudioSource> ();
 		m_lastHitTime = 0f;
 	}
 
@@ -29,6 +31,7 @@ public class APSampleSpikes : MonoBehaviour
 		APSamplePlayer character = otherCollider.GetComponent<APSamplePlayer>();
 		if(character && !character.IsGodModeEnabled())
 		{
+			audio.Play ();
 			// prevent checking hits too often
 			if(Time.time < m_lastHitTime + m_minTimeBetweenTwoReceivedHits)
 				return;
