@@ -14,6 +14,7 @@ using System.Collections;
 public class RandChoices : MonoBehaviour {
 	int maxSize = 0;
 	float timer = 0;
+	bool infiniteShake = false;
 	Random rand = new Random();
 	int choiceIndex = 0;
 	bool useWheel = true;
@@ -34,21 +35,21 @@ public class RandChoices : MonoBehaviour {
 		}
 		if(jumpforever)
 			go.GetComponent<APCharacterController>().m_jump.m_forever = true; 
-		
+		if (infiniteShake)
+			Camera.main.GetComponent<CameraShakeScript> ().shake = 1;
 	}
 	void Start ()
 	{
 		go = GameObject.Find("Player");
 		go.GetComponent<APCharacterController>().m_jump.m_forever = false; 
-		choices = new string[7]{"???????", "???????","???????","???????","???????","???????","???????"};
-		hiddenChoices = new string[7]{"Don't Go Too Fast!", "Don't Double Jump!", "Don't Be Afraid To Jump!", "Don't Jump So Far!", "Don't Stop Jumping!", "Don't Look At Things So Normally!", "Don't Act So Grounded!"};
+		choices = new string[9]{"???????", "???????","???????","???????","???????","???????","???????","???????","???????"};
+		hiddenChoices = new string[9]{"Don't Go Too Fast!", "Don't Double Jump!", "Don't Be Afraid To Jump!", "Don't Jump So Far!", "Don't Stop Jumping!", "Don't Look At Things So Normally!", "Don't Act So Grounded!", "Don't Be Afraid!","Don't Die"};
 		maxSize = hiddenChoices.Length;
 		choiceIndex = Random.Range (0, maxSize);
 	}
 	void Awake(){
 
-
-		choiceIndex = Random.Range(0, maxSize);
+		//choiceIndex = Random.Range(0, maxSize);
 		useWheel = true;
 		timer = 0;
 	}
@@ -111,6 +112,12 @@ public class RandChoices : MonoBehaviour {
 				break;
 			case 6:
 				go.GetComponent<APCharacterController>().m_basic.m_gravity = 10f;
+				break;
+			case 7:
+				infiniteShake = true;
+				break;
+			case 8:
+				go.GetComponent<APSamplePlayer>().checkDeath = true;
 				break;
 		}
 	}
