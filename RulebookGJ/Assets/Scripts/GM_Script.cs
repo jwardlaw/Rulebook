@@ -5,6 +5,7 @@ public class GM_Script : MonoBehaviour
 {
 	public float timer;
 	public Transform PlayerPos;
+	public GameObject Player;
 	private static GM_Script instance = null;
 	public static GM_Script Instance {
 		get { return instance; }
@@ -25,8 +26,11 @@ public class GM_Script : MonoBehaviour
 
 	void Update()
 	{
-		PlayerPos = GameObject.Find ("Player").transform;
-		timer += Time.deltaTime;
+		Player = GameObject.Find ("Player");
+		if(Player != null) {
+			PlayerPos = Player.transform;
+			timer += Time.deltaTime;
+		}
 	}
 
 	void OnGUI()
