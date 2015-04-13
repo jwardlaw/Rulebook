@@ -187,6 +187,8 @@ public class APSamplePlayer : MonoBehaviour
 
 	IEnumerator RestartLevel () 
 	{
+
+		Camera.main.GetComponent<CameraShakeScript> ().shake = 1;
 		yield return new WaitForSeconds (m_waitTimeAfterDie);
 
 		// launch fade to black
