@@ -3,9 +3,12 @@ using System.Collections;
 
 public class LastLevel : MonoBehaviour {
 
+	public AudioSource audio;
+
 	// Use this for initialization
 	void Start () 
 	{
+		audio = GetComponent<AudioSource>();
 		if (gameObject.name == "Player") 
 		{
 			StartCoroutine (FadeScene ());
@@ -18,7 +21,9 @@ public class LastLevel : MonoBehaviour {
 	
 	IEnumerator FadeDelete()
 	{
-		yield return new WaitForSeconds(30);
+		yield return new WaitForSeconds(32);
+		audio.Play();
+		yield return new WaitForSeconds (0.2f);
 		Destroy (gameObject);
 	}
 
