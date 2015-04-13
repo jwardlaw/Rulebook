@@ -19,6 +19,7 @@ public class APSamplePlayer : MonoBehaviour
 	public Vector2 m_hitImpulse = new Vector2(8f, 12f);		// impulse when beeing hit by Blob
 	public float m_waitTimeAfterDie = 0f;					// time to wait before reseting level after dying (to allows die animation to play)
 	public string m_animDie;								// state of animation die
+	public bool checkDeath = false;
 
 	////////////////////////////////////////////////////////
 	// PRIVATE/LOW LEVEL
@@ -189,9 +190,14 @@ public class APSamplePlayer : MonoBehaviour
 	{
 		Camera.main.GetComponent<CameraShakeScript> ().shake = 1;
 		yield return new WaitForSeconds (m_waitTimeAfterDie);
-
-		// launch fade to black
-		Application.LoadLevel(Application.loadedLevel);
+		if (checkDeath) 
+		{
+			Application.LoadLevel (1);
+		} 
+		else 
+		{
+			Application.LoadLevel (Application.loadedLevel);
+		}
 
 		// remove player
 		gameObject.SetActive(false);
