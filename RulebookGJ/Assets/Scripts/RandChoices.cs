@@ -18,11 +18,13 @@ public class RandChoices : MonoBehaviour {
 	int choiceIndex = 0;
 	bool useWheel = true;
 	bool timerFinished = false;
+	bool jumpforever = false;
 	string currentChoice = "";
 	string[] hiddenChoices;
 	string[] choices;
 	private int groupWidth = 200;
 	private int groupHeight = 170;
+	GameObject go;
 	void Update(){
 		if (useWheel) {
 			if (!Camera.main.GetComponent<AudioSource> ().isPlaying) {
@@ -32,15 +34,21 @@ public class RandChoices : MonoBehaviour {
 			if(!timerFinished)
 				timer += Time.deltaTime;
 		}
+		if(jumpforever)
+			go.GetComponent<APCharacterController>().m_jump.m_forever = true; 
+		
 	}
 	void Start ()
 	{
-		choices = new string[5]{"???????", "???????","???????","???????","???????"};
-		hiddenChoices = new string[5]{"This is It", "N", "A", "b", "c"};
+		go = GameObject.Find("Player");
+		go.GetComponent<APCharacterController>().m_jump.m_forever = false; 
+		choices = new string[6]{"???????", "???????","???????","???????","???????","???????"};
+		hiddenChoices = new string[6]{"Don't Go Too Fast!", "Don't Double Jump!", "Don't Be Afraid To Jump!", "Don't Jump So Far!", "Don't Stop Jumping!", "Don't Look at Things so normally!"};
 		maxSize = hiddenChoices.Length;
 		choiceIndex = Random.Range (0, maxSize);
 	}
 	void Awake(){
+
 		choiceIndex = Random.Range(0, maxSize);
 		useWheel = true;
 		timer = 0;
@@ -54,6 +62,7 @@ public class RandChoices : MonoBehaviour {
 	{
 		currentChoice= hiddenChoices [choiceIndex];
 		choices [choiceIndex] = currentChoice;
+		ActionChange (choiceIndex);
 	}
 	bool TogglePause()
 	{
@@ -66,7 +75,7 @@ public class RandChoices : MonoBehaviour {
 		}
 	}
 	void OnGUI () {
-		if (timer < 5) {
+		if (timer < 2) {
 			GUI.color = Color.white;
 			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeight / 2)), groupWidth, groupHeight));
 			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
@@ -75,18 +84,43 @@ public class RandChoices : MonoBehaviour {
 			}
 			GUI.EndGroup ();
 		} 
-		else if (timer >= 5){
+		else if (timer >= 2){
 			string eventChosen = GetRandomChoice();
 			for(int i= 0, j = 0; i < maxSize; i++, j += 20 ){
 				if(eventChosen.CompareTo(choices[i]) != 0){
 					GUI.color = Color.white;
-					GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
+					GUI.TextArea (new Rect (0, 0 + j, 180, 20), choices[i]);
 				}else{
 				    GUI.color = Color.yellow;
-					GUI.TextArea (new Rect (0, 0 + j, 100, 20), choices[i]);
+					GUI.TextArea (new Rect (0, 0 + j, 180, 20), choices[i]);
 				}
 			}
 			timerFinished = true;
+		}
+	}
+	void ActionChange(int ChoiceIndex){
+		switch(ChoiceIndex){
+			case 0:
+				Time.timeScale = 0.5f;
+				break;
+			case 1:
+				go.GetComponent<APCharacterController>().m_jump.m_airJumpCount = 0;
+				break;
+			case 2:
+				go.GetComponent<APCharacterController>().m_jump.m_minHeight = 10f;
+				go.GetComponent<APCharacterController>().m_jump.m_maxHeight = 10f;
+				break;
+			case 3:
+				go.GetComponent<APCharacterController>().m_jump.m_minHeight = 1.5f;
+				go.GetComponent<APCharacterController>().m_jump.m_maxHeight = 1.5f;
+				break;
+			case 4:
+				jumpforever = true; 
+				go.GetComponent<APCharacterController>().m_jump.m_airJumpCount = 0;
+				break;
+			case 5:
+				Camera.main.transform.eulerAngles =  new Vector3(0,0,180);
+				break;
 		}
 	}
 }
